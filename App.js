@@ -1,18 +1,14 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { Button, SafeAreaView, StyleSheet } from "react-native";
 
 export default function App() {
-  const handlePress = () => {
-    console.log("Text pressed!");
-  };
-
   return (
     <SafeAreaView style={styles.container}>
-      <Text numberOfLines={1} onPress={handlePress}>
-        Open up App.js to start working on your app! - A really really long
-        Text. Now i want to make this even longer!!!!!!!!!
-      </Text>
-      <StatusBar style="auto" />
+      <Button
+        color={"orange"}
+        title="Click Me"
+        onPress={() => console.log("Button Tapped!")}
+      />
     </SafeAreaView>
   );
 }
