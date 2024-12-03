@@ -1,16 +1,28 @@
 import { StatusBar } from "expo-status-bar";
 import {
+  Dimensions,
   Button,
   SafeAreaView,
-  Alert,
   StyleSheet,
   Platform,
+  View,
 } from "react-native";
 
+import { useDeviceOrientation } from "@react-native-community/hooks";
+
 export default function App() {
+  // console.log(Dimensions.get("screen")); // Get dimensions of the device. Problem: Rotation won't update the dimensions.
+  const deviceOrientation = useDeviceOrientation();
+
   return (
     <SafeAreaView style={styles.container}>
-      <Button title="Click Me" onPress={() => console.log("Button pressed.")} />
+      <View
+        style={{
+          backgroundColor: "dodgerblue",
+          width: "100%", // DIPs == Density Independent Pixels, Physical Pixels = DIPs x Scale Factor of device
+          height: deviceOrientation === "landscape" ? "100%" : "30%",
+        }}
+      ></View>
     </SafeAreaView>
   );
 }
