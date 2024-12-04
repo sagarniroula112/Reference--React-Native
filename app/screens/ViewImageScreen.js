@@ -17,6 +17,7 @@ function ViewImageScreen(props) {
   );
 }
 
+// rnss
 const styles = StyleSheet.create({
   closeIcon: {
     width: 50,
